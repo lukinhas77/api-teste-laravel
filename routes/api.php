@@ -21,22 +21,22 @@ use App\Http\Controllers\AuthController;
 Route::group(['middleware' => ['auth:sanctum']], function() {
     
     //busca all users
-    Route::get('usuarios', [UsuarioController::class, 'index']);
+    Route::get('users', [UsuarioController::class, 'index']);
 
     //busca user
-    Route::get('usuarios/{id}', [UsuarioController::class, 'show']);
+    Route::get('users/{id}', [UsuarioController::class, 'show']);
 
     //create new 
-    Route::post('usuario', [UsuarioController::class, 'store']);
+    Route::post('user', [UsuarioController::class, 'store']);
 });
 
 
 
 //cadastro 
-Route::post('usuarios/registrar', [AuthController::class, 'registrar']);
+Route::post('users/registrar', [AuthController::class, 'registrar']);
 
 //login
-Route::post('usuarios/login', [AuthController::class, 'login']);
+Route::post('users/login', [AuthController::class, 'login']);
 
 
 
